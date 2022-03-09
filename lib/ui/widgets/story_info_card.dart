@@ -1,7 +1,6 @@
 import 'dart:ui';
-
-import 'package:blog_club/data/models/story_model.dart';
-import 'package:blog_club/ui/theming/theme_controller.dart';
+import '/data/models/story_model.dart';
+import '/ui/theming/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

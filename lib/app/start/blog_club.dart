@@ -1,6 +1,5 @@
-import 'package:blog_club/ui/screens/story_screen.dart';
+import '/ui/screens/story_screen.dart';
 import 'package:get/get.dart';
-
 import '/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 

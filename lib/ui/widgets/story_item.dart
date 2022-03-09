@@ -1,6 +1,6 @@
-import 'package:blog_club/data/models/user_all_story.dart';
-import 'package:blog_club/ui/screens/story_screen.dart';
-import 'package:blog_club/ui/view-models/story_screen_view_model.dart';
+import '/data/models/user_all_story.dart';
+import '/ui/screens/story_screen.dart';
+import '/ui/view-models/story_screen_view_model.dart';
 import '/ui/theming/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

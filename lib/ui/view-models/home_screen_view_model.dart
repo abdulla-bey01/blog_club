@@ -1,5 +1,4 @@
-import 'package:blog_club/data/models/user_all_story.dart';
-
+import '/data/models/user_all_story.dart';
 import '/data/models/article_model.dart';
 import '/data/models/category_model.dart';
 import '/data/models/story_model.dart';

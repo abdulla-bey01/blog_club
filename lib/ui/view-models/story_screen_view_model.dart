@@ -1,5 +1,5 @@
-import 'package:blog_club/data/models/user_all_story.dart';
-import 'package:blog_club/ui/view-models/abstraction/initializable.dart';
+import '/data/models/user_all_story.dart';
+import '/ui/view-models/abstraction/initializable.dart';
 import 'package:get/get.dart';
 
 class StoryScreenViewModel extends RxController implements Initialazible {

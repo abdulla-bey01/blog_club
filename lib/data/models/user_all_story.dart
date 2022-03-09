@@ -1,4 +1,4 @@
-import 'package:blog_club/data/models/story_model.dart';
+import '/data/models/story_model.dart';
 
 class UserAllStoryModel {
   final String ownerName;

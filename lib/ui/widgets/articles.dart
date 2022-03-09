@@ -1,4 +1,3 @@
-import '/ui/theming/theme_controller.dart';
 import '/ui/view-models/home_screen_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,8 +9,6 @@ class Articles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeScreenViewModel _homePageViewModel = Get.find();
-    final ThemeController _themeController = Get.find();
-    final _theme = _themeController.theme;
 
     return Column(
       children: _homePageViewModel.articles.map((article) {

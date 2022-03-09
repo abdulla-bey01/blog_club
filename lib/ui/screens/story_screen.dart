@@ -1,9 +1,6 @@
-import 'dart:ui';
-
-import 'package:blog_club/ui/theming/theme_controller.dart';
-import 'package:blog_club/ui/theming/theme_model.dart';
-import 'package:blog_club/ui/view-models/story_screen_view_model.dart';
-import 'package:blog_club/ui/widgets/story_info_card.dart';
+import '/ui/theming/theme_controller.dart';
+import '/ui/view-models/story_screen_view_model.dart';
+import '/ui/widgets/story_info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +12,7 @@ class StoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeController _themeController = Get.find();
+
     final _theme = _themeController.theme;
     final _height = MediaQuery.of(context).size.height;
     final _width = MediaQuery.of(context).size.width;
@@ -73,32 +71,68 @@ class StoryScreen extends StatelessWidget {
                           Center(
                             child: SizedBox(
                               width: _width - 16,
-                              height: 10,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: storyScreenViewModel!
-                                    .userStory.stories
-                                    .map((e) {
-                                  return Padding(
-                                    padding: const EdgeInsets.only(right: 2.0),
-                                    child: Container(
-                                      width: (_width - 16) /
-                                              storyScreenViewModel!
-                                                  .userStory.storyLentgh -
-                                          (storyScreenViewModel!
-                                                  .userStory.storyLentgh *
-                                              2.0),
-                                      height: 4,
-                                      decoration: BoxDecoration(
-                                        color: _theme.c255_255_255_029,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  );
-                                }).toList(),
+                              height: 4,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16.0),
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: storyScreenViewModel!
+                                        .userStory.storyLentgh,
+                                    itemBuilder: (ctx, index) {
+                                      return Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 2.0),
+                                        child: InkWell(
+                                          onTap: () {
+                                            storyScreenViewModel!
+                                                .updateStoryIndex(to: index);
+                                          },
+                                          child: SizedBox(
+                                            width: (_width - 16) /
+                                                    storyScreenViewModel!
+                                                        .userStory.storyLentgh -
+                                                (storyScreenViewModel!
+                                                        .userStory.storyLentgh *
+                                                    2.0),
+                                            height: 10,
+                                            child: Container(
+                                              width: (_width - 16) /
+                                                      storyScreenViewModel!
+                                                          .userStory
+                                                          .storyLentgh -
+                                                  (storyScreenViewModel!
+                                                          .userStory
+                                                          .storyLentgh *
+                                                      2.0),
+                                              height: 4,
+                                              decoration: BoxDecoration(
+                                                color: index ==
+                                                        storyScreenViewModel!
+                                                            .currentStoryIndex
+                                                    ? _theme.c255_255_255_1
+                                                    : _theme.c255_255_255_029,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
                               ),
+                              // child: Row(
+                              //   mainAxisAlignment:
+                              //       MainAxisAlignment.spaceEvenly,
+                              //   children: storyScreenViewModel!
+                              //       .userStory.stories
+                              //       .map((e) {
+
+                              //   }).toList(),
+                              // ),
                             ),
                           ),
                           Padding(
